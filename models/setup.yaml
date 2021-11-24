@@ -1,0 +1,60 @@
+###############################################
+# training and testing related configurations #
+###############################################
+
+TRAIN: true
+TEST: true
+
+TRAINING:
+  # options: "A", "B", "C", "D", "E", "combined"
+  EVENT_CATEGORY: "A"
+  # options: "resnet3d_direct", "random", "OF_PR", "Ablation"
+  MODEL_TYPE: "random"
+  # path to save experiment data *relative to main.py*
+  RELATIVE_SAVE_PATH: "experiments/"
+  # path to save dataset objects for quick loading and retrieval *relative to main.py*
+  RELATIVE_DATASET_PATH: "datasets/"
+  # path to AVoE Dataset (with the 5 folders for each event category)
+  ABSOLUTE_DATA_PATH: ''
+  # path to state_dict of model to load (best_model.pth) *relative to main.py*
+  RELATIVE_LOAD_MODEL_PATH: null
+  # type of decision tree. Options: "normal", "direct", "combined"
+  DECISION_TREE_TYPE: "combined"
+  # to use oracle model for observed outcome
+  SEMI_ORACLE: true
+  # to use gpu or not to
+  USE_GPU: true
+  # learning rate for training
+  LEARNING_RATE: 0.001
+  # number of epochs
+  NUM_EPOCHS: 10
+  # batch size for training
+  BATCH_SIZE: 16
+  # to use pretrained wights for transfer learning
+  USE_PRETRAINED: true
+  # whether to freeze pretrained weights
+  FREEZE_PRETRAINED_WEIGHTS: true
+  # set the random seed
+  RANDOM_SEED: 1
+  # optimizer type. Options: ['adam', 'sgd']
+  OPTIMIZER_TYPE: "adam"
+  # dataset efficiency (cpu) Options: ['time', 'memory'] time loads entire dataset into CPU
+  DATASET_EFFICIENCY: 'time'
+
+TESTING:
+  # options: "A", "B", "C", "D", "E", "combined"
+  EXPERIMENT_ID: null
+  # path to save experiment data *relative to main.py*
+  RELATIVE_SAVE_PATH: "experiments/"
+  # path to save dataset objects for quick loading and retrieval *relative to main.py*
+  RELATIVE_DATASET_PATH: "datasets/"
+  # path to AVoE Dataset (with the 5 folders for each event category)
+  ABSOLUTE_DATA_PATH: ''
+  # type of decision tree. Options: "normal", "direct", "combined"
+  DECISION_TREE_TYPE: "combined"
+  # to use oracle model for observed outcome
+  SEMI_ORACLE: true
+  # to use gpu or not to
+  USE_GPU: true
+  # dataset efficiency (cpu) Options: ['time', 'memory'] time loads entire dataset into CPU
+  DATASET_EFFICIENCY: 'time'
